@@ -1,11 +1,12 @@
+## Configurar las variables para poder trabajar con el VPC default
 locals {
-  vpc_id = "vpc-08ec"
-  subnet_id = "subnet-01c68b2d541c535fd"
+  vpc_id = ""
+  subnet_id = ""
   ssh_user = "ec2-user"
-  key_name = "jenkins-kp"
-  private_key_path = "~/jenkins-kp.pem"
-  name_instance = "deploy-instance"
-  security_group = "sg-0576602e368f92441"
+  key_name = ""
+  private_key_path = ""
+  name_instance = ""
+  security_group = ""
 }
 
 provider "aws" {
@@ -15,7 +16,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "deploy-instance" {
-  ami = "ami-026b57f3c383c2eec"
+  ami = "" # Configurar con el AMI adecuado gratuito 
   subnet_id = local.subnet_id
   instance_type = "t2.micro"
   associate_public_ip_address = true
